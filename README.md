@@ -2,28 +2,47 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+This Vue.js app allows users to search for a US ZIP code and displays its corresponding address.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+See [Demo](https://gabrielmaksimovich.github.io/vue-zip-code-app/).
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technologies Used
+
+Vue.js - A progressive framework for building user interfaces.
+
+Vite - A build tool that aims to provide a faster and leaner development experience.
+
+Axios - A promise-based HTTP client for the browser and node.js.
 
 ## Project Setup
+
+To set up this project on your local machine, run the following command:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### How to Use
+
+1. Enter a valid US ZIP code into the input field.
+2. Click the "Search" button.
+3. If the ZIP code is valid, the corresponding address will be displayed below the input field.
+4. If the ZIP code is invalid, an error message will be displayed below the input field.
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Demo
+
+Check out the live demo on [GitHub Pages](https://gabrielmaksimovich.github.io/vue-zip-code-app/).
+
+### Compiles and minifies for production
 
 ```sh
 npm run build
 ```
+
+This will compile and minify the app for production.
+For more information about the configuration, see the [Vite Configuration Reference](https://vitejs.dev/config/)
