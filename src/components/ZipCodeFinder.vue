@@ -1,8 +1,8 @@
 <template>
   <div class="zip-code-finder">
-    <form class="zip-code-finder__form">
+    <form class="zip-code-finder__form" @submit.prevent="search">
       <input class="zip-code-finder__input" v-model="zipCode" placeholder="Enter ZIP code">
-      <button type="button" class="zip-code-finder__button" @click="search">Search</button>
+      <button type="submit" class="zip-code-finder__button">Search</button>
     </form>
     <div v-if="address" class="zip-code-finder__result">
       <p class="zip-code-finder__result-country">{{ address.country }}</p>
@@ -12,7 +12,6 @@
       <p class="zip-code-finder__result-other">lat: {{ address.places[0].latitude }}</p>
     </div>
     <div v-if="errorMessage" class="zip-code-finder__error">
-
       {{ errorMessage }}
     </div>
   </div>
@@ -71,10 +70,15 @@ export default {
         this.address = null;
         this.errorMessage = 'Invalid ZIP code';
       }
+    },
+    async onSubmit(event) {
+      event.preventDefault();
+      await this.search();
     }
   }
 };
 </script>
+
 
 <style>
 .zip-code-finder {
@@ -103,7 +107,7 @@ export default {
 }
 
 .zip-code-finder__button {
-  background-color: blue;
+  background-color: blue !important;
   color: white;
   padding: 5px;
   border-radius: 5px;
