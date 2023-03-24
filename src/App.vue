@@ -11,10 +11,20 @@ import ZipCodeFinder from './components/ZipCodeFinder.vue';
 </template>
 
 <style scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  background: aqua;
+  max-width: 500px;
+  margin: 15rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
 .app__title {
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   font-size: 2.5rem;
 }
 </style>
