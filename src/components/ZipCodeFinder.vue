@@ -103,10 +103,6 @@ export default {
 
   height: 400px;
   margin-bottom: 20rem;
-
-  background-image: url("https://i.imgur.com/kBQ2NRu.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .zip-code-finder__form {
