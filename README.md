@@ -1,4 +1,4 @@
-# vue-zip-code-app
+# Vue-zip-code-app
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -9,10 +9,13 @@ See [Demo](https://gabrielmaksimovich.github.io/vue-zip-code-app/).
 
 ## Technologies Used
 
+<img src="https://github.com/devicons/devicon/blob/master/icons/vuejs/vuejs-original.svg" title="Vue" alt="Vue" width="40" height="40"/>&nbsp;
 Vue.js - A progressive framework for building user interfaces.
 
+<img src="https://camo.githubusercontent.com/61e102d7c605ff91efedb9d7e47c1c4a07cef59d3e1da202fd74f4772122ca4e/68747470733a2f2f766974656a732e6465762f6c6f676f2e737667" alt="vite" width="40" height="40"/>&nbsp;
 Vite - A build tool that aims to provide a faster and leaner development experience.
 
+<img src="https://upload.vectorlogo.zone/logos/axios/images/e2aae3c1-f98d-450b-8406-513bb5e6d5da.svg" aling="center" alt="vite" width="80" height="10"/>&nbsp;
 Axios - A promise-based HTTP client for the browser and node.js.
 
 ## Project Setup
