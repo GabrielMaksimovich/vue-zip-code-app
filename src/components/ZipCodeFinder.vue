@@ -2,7 +2,12 @@
   <div class="zip-code-finder">
     <form class="zip-code-finder__form" @submit.prevent="search">
       <input class="zip-code-finder__input" v-model="zipCode" placeholder="Enter ZIP code">
-      <button type="submit" class="zip-code-finder__button">Search</button>
+      <button type="submit" class="zip-code-finder__button">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#FFF" height="25" width="25" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255);">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
     </form>
     <div v-if="address" class="zip-code-finder__result">
       <p class="zip-code-finder__result-country">{{ address.country }}</p>
@@ -10,6 +15,13 @@
       <p class="zip-code-finder__result-state">{{ address.places[0].state }}</p>
       <p class="zip-code-finder__result-other">long: {{ address.places[0].longitude }}</p>
       <p class="zip-code-finder__result-other">lat: {{ address.places[0].latitude }}</p>
+      <button class="zip-code-finder__clear" @click="clearAddress">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" color="#FFF" height="25" width="25" xmlns="http://www.w3.org/2000/svg" style="color: rgb(255, 255, 255);">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="15" y1="15" x2="9" y2="9"></line>
+        </svg>
+      </button>
     </div>
     <div v-if="errorMessage" class="zip-code-finder__error">
       {{ errorMessage }}
@@ -71,6 +83,10 @@ export default {
         this.errorMessage = 'Invalid ZIP code';
       }
     },
+    clearAddress() {
+      this.address = null;
+      this.errorMessage = '';
+    },
     async onSubmit(event) {
       event.preventDefault();
       await this.search();
@@ -84,37 +100,52 @@ export default {
 .zip-code-finder {
   display: flex;
   flex-direction: column;
+
+  height: 400px;
+  margin-bottom: 20rem;
+
+  background-image: url("https://i.imgur.com/kBQ2NRu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .zip-code-finder__form {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: hsla(0,0%,100%,.2);
+  border-radius: 8px;
+  box-shadow: 1px 3px 8px rgba(0,0,0,.5);
+
+  margin: 34px 0;
+  padding: 15px;
+
+  transition: background .3s ease;
+}
+
+.zip-code-finder__form:hover {
+  background-color: hsla(0,0%,65%,.2);
 }
 
 .zip-code-finder__input {
   margin-right: 10px;
   padding: 5px;
-
   border-radius: 5px;
   outline: none;
-
-  transition: transform 0.3s ease;
+  background: transparent;
+  color: white;
 }
 
-.zip-code-finder__input:hover {
-  transform: scale(1.1);
-}
+
 
 .zip-code-finder__button {
-  background-color: blue !important;
   color: white;
-  padding: 5px;
-  border-radius: 5px;
 }
 
 .zip-code-finder__result {
   margin-top: 10px;
+  color: white;
 }
 
 .zip-code-finder__result-country {
@@ -135,8 +166,13 @@ export default {
   color: darkolivegreen;
 }
 
+.zip-code-finder__clear {
+  margin-top: 15px;
+}
+
 .zip-code-finder__error {
   margin-top: 10px;
   color: red;
 }
 </style>
+

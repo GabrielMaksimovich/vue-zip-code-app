@@ -25,6 +25,7 @@ npm install
 
 ### How to Use
 
+0. Start proxy using 'node proxy.js' command.
 1. Enter a valid US ZIP code into the input field.
 2. Click the "Search" button.
 3. If the ZIP code is valid, the corresponding address will be displayed below the input field.

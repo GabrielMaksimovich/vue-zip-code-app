@@ -5,26 +5,36 @@ import ZipCodeFinder from './components/ZipCodeFinder.vue';
 
 <template>
   <div class="app">
-    <h1 class="app__title">Zip Code Finder</h1>
+    <h1 class="app__title">Zip-code finder</h1>
     <zip-code-finder></zip-code-finder>
+
+    <div class="app_subtitle">@made by <a class="app__link" href="https://github.com/GabrielMaksimovich">Baturinskyi Maksym</a>, see my <a class="app__link" href="https://my-portfolio-gb.netlify.app/">other projects</a></div>
   </div>
 </template>
 
 <style scoped>
 .app {
+  align-items: center;
+  background: linear-gradient(#121212,#212b46);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5rem;
+  height: 100vh;
+  justify-content: center;
+}
 
-  background: aqua;
-  max-width: 500px;
-  margin: 15rem auto;
-  padding: 1.5rem;
-  border-radius: 1rem;
-}
+
 .app__title {
-  text-align: center;
-  font-size: 2.5rem;
+  animation: flipTitle 2s;
+  color: #fff;
+  font-size: 85px;
 }
+
+.app_subtitle {
+  color: white;
+}
+
+.app__link {
+  text-decoration: underline;
+}
+
 </style>
